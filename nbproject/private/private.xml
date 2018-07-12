@@ -4,7 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/dacastro/Documents/NetBeansProjects/biblioteca/src/vista/Menu.java</file>
-            <file>file:/C:/Users/dacastro/Documents/NetBeansProjects/biblioteca/src/vista/IULibro.java</file>
+            <file>file:/C:/Users/dacastro/Documents/NetBeansProjects/biblioteca/src/control/ConnectBD.java</file>
+            <file>file:/C:/Users/dacastro/Documents/NetBeansProjects/biblioteca/src/vista/IULibros.java</file>
+            <file>file:/C:/Users/dacastro/Documents/NetBeansProjects/biblioteca/src/vista/IUAutores.java</file>
+            <file>file:/C:/Users/dacastro/Documents/NetBeansProjects/biblioteca/src/control/ControllerLibros.java</file>
+            <file>file:/C:/Users/dacastro/Documents/NetBeansProjects/biblioteca/src/modelo/Libro.java</file>
         </group>
     </open-files>
 </project-private>
