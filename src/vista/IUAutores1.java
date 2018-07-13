@@ -15,12 +15,12 @@ import modelo.Libro;
  *
  * @author dacastro
  */
-public class IULibros extends javax.swing.JInternalFrame {
+public class IUAutores1 extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form IULibros
      */
-    public IULibros() {
+    public IUAutores1() {
         initComponents();
         this.getContentPane().setBackground(new Color(0, 102, 153));
     }
@@ -121,7 +121,7 @@ public class IULibros extends javax.swing.JInternalFrame {
         jLabel7.setFont(new java.awt.Font("Arial Narrow", 0, 48)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Insertar Libros");
+        jLabel7.setText("Insertar Autores");
 
         jButton3.setBackground(new java.awt.Color(0, 102, 153));
         jButton3.setFont(new java.awt.Font("Arial Narrow", 0, 14)); // NOI18N

@@ -52,7 +52,7 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.setText("File");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("New");
+        jMenuItem1.setText("Ingresar Libros");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -119,12 +119,12 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         if (jDesktopPane1.getComponentListeners().length == 0) {
-            IUAutores objA = new IUAutores();
+            IUAutores1 objA = new IUAutores1();
             jDesktopPane1.add(objA);
             objA.show();
         } else {
             jDesktopPane1.removeAll();
-            IUAutores objA = new IUAutores();
+            IUAutores1 objA = new IUAutores1();
             jDesktopPane1.add(objA);
             objA.show();
         }
