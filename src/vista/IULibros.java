@@ -7,6 +7,7 @@ package vista;
 
 import control.ControllerLibros;
 import java.awt.Color;
+import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 import jdk.nashorn.internal.ir.BreakNode;
 import modelo.Libro;
@@ -20,6 +21,8 @@ public class IULibros extends javax.swing.JInternalFrame {
     /**
      * Creates new form IULibros
      */
+    public JDesktopPane jDesktopPaneE;
+
     public IULibros() {
         initComponents();
         this.getContentPane().setBackground(new Color(0, 102, 153));
@@ -307,7 +310,9 @@ public class IULibros extends javax.swing.JInternalFrame {
         jTextField6.setText("");
     }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        IUAutores1 objA = new IUAutores1();
+        jDesktopPaneE.add(objA);
+        objA.show();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

@@ -88,7 +88,7 @@ public class Libro {
         return "Libro{" + "idlibro=" + idlibro + ", nombrelibro=" + nombrelibro + ", numpaginaslibro=" + numpaginaslibro + ", preciolibro=" + preciolibro + ", anioedicionlibro=" + anioedicionlibro + ", numEdicion=" + numEdicion + '}';
     }
 
-    public boolean insertLibro(String sql, Libro objL) {
+    public boolean insertLibro(String sql) {
 
         ConnectBD objCon = new ConnectBD();
 

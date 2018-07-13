@@ -5,10 +5,13 @@
  */
 package vista;
 
+import control.ControllerAutor;
 import control.ControllerLibros;
 import java.awt.Color;
+import java.util.LinkedList;
 import javax.swing.JOptionPane;
 import jdk.nashorn.internal.ir.BreakNode;
+import modelo.Autor;
 import modelo.Libro;
 
 /**
@@ -20,9 +23,12 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
     /**
      * Creates new form IULibros
      */
+    LinkedList<Autor> listaAutores;
+
     public IUAutores1() {
         initComponents();
         this.getContentPane().setBackground(new Color(0, 102, 153));
+        listaAutores = new LinkedList<>();
     }
 
     /**
@@ -41,15 +47,9 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
         jTextField2 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 102, 153));
         setBorder(null);
@@ -62,7 +62,7 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
         jButton1.setBackground(new java.awt.Color(0, 102, 153));
         jButton1.setFont(new java.awt.Font("Arial Narrow", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Aceptar");
+        jButton1.setText("Agregar Autores");
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,7 +73,7 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Código Libro *");
+        jLabel1.setText("Nombre Autor *");
 
         jTextField1.setFont(new java.awt.Font("Arial Narrow", 0, 14)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -81,7 +81,7 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Nombre Libro *");
+        jLabel2.setText("Apellido Autor *");
 
         jTextField2.setFont(new java.awt.Font("Arial Narrow", 0, 14)); // NOI18N
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -89,51 +89,15 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Num. Páginas *");
+        jLabel3.setText("País del Autor *");
 
         jTextField3.setFont(new java.awt.Font("Arial Narrow", 0, 14)); // NOI18N
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        jLabel4.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Precio * ");
-
-        jTextField4.setFont(new java.awt.Font("Arial Narrow", 0, 14)); // NOI18N
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        jLabel5.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Año Edición *");
-
-        jTextField5.setFont(new java.awt.Font("Arial Narrow", 0, 14)); // NOI18N
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        jLabel6.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Número de Edición *");
-
-        jTextField6.setFont(new java.awt.Font("Arial Narrow", 0, 14)); // NOI18N
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel7.setFont(new java.awt.Font("Arial Narrow", 0, 48)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Insertar Autores");
-
-        jButton3.setBackground(new java.awt.Color(0, 102, 153));
-        jButton3.setFont(new java.awt.Font("Arial Narrow", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Autor(s)");
-        jButton3.setBorder(null);
-        jButton3.setEnabled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
 
         jButton4.setBackground(new java.awt.Color(0, 102, 153));
         jButton4.setFont(new java.awt.Font("Arial Narrow", 0, 14)); // NOI18N
@@ -146,6 +110,17 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton5.setBackground(new java.awt.Color(0, 102, 153));
+        jButton5.setFont(new java.awt.Font("Arial Narrow", 0, 14)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Insertar Autores");
+        jButton5.setBorder(null);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -154,44 +129,32 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
                 .addGap(160, 160, 160)
                 .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(220, 220, 220))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(111, 111, 111)
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(89, 89, 89)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(60, 60, 60)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
-                                .addGap(88, 88, 88)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel4))
-                                .addGap(94, 94, 94)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel1))
+                        .addGap(80, 80, 80))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
                         .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(47, 47, 47)
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(53, 53, 53)
+                        .addGap(59, 59, 59)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(84, 84, 84)
                         .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(105, 105, 105))))
+                        .addGap(74, 74, 74))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,9 +162,9 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -210,23 +173,11 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(176, 176, 176)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -235,40 +186,44 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //JOptionPane.showConfirmDialog(null, "Hola!!!!", "ventanas ",JOptionPane.INFORMATION_MESSAGE);
+        Autor objA;
 
         if (revisarCampos()) {
-            String idlibro = jTextField1.getText();
-            String nombrelibro = jTextField2.getText();
-            int numpaginaslibro = 0;
-            try {
-                numpaginaslibro = Integer.parseInt(jTextField3.getText());
-            } catch (NumberFormatException nfe) {
-                JOptionPane.showMessageDialog(null, "Debe ingesar un dato entero en el campo!!!" + nfe);
+            String nombreautor = jTextField1.getText();
+            String apellidoautor = jTextField2.getText();
+            String paisautor = jTextField3.getText();
 
-            }
-            double preciolibro = 0.0;
-            try {
-                preciolibro = Double.parseDouble(jTextField4.getText());
-            } catch (NumberFormatException nfe) {
-                JOptionPane.showMessageDialog(null, "Debe ingesar un dato real en el campo!!!" + nfe);
-            }
-            String anioedicionlibro = jTextField5.getText();
-            String numEdicion = jTextField6.getText();
+            objA= new Autor(nombreautor, apellidoautor, paisautor);
+            listaAutores.add(objA);
+//            try {
+//                numpaginaslibro = Integer.parseInt(jTextField3.getText());
+//            } catch (NumberFormatException nfe) {
+//                JOptionPane.showMessageDialog(null, "Debe ingesar un dato entero en el campo!!!" + nfe);
+//
+//            }
+            //double preciolibro = 0.0;
+//            try {
+//                preciolibro = Double.parseDouble(jTextField4.getText());
+//            } catch (NumberFormatException nfe) {
+//                JOptionPane.showMessageDialog(null, "Debe ingesar un dato real en el campo!!!" + nfe);
+//            }
+//            String anioedicionlibro = jTextField5.getText();
+//            String numEdicion = jTextField6.getText();
 
-            if (preciolibro != 0.0 && numpaginaslibro != 0) {
-                Libro objL = new Libro(idlibro, nombrelibro, numpaginaslibro, preciolibro, anioedicionlibro, numEdicion);
-
-                ControllerLibros objC = new ControllerLibros();
-                boolean in = objC.insertLibro(objL);
-                if (in) {
-                    JOptionPane.showMessageDialog(null, "Se inserto Correctamente el Libro " + nombrelibro);
-                    jButton3.setEnabled(true);
-                    limpiarCampos();
-                } else {
-                    JOptionPane.showMessageDialog(null, "No se pudo Insertar el libro");
-                }
-
-            }
+//            if (preciolibro != 0.0 && numpaginaslibro != 0) {
+//                Libro objL = new Libro(idlibro, nombrelibro, numpaginaslibro, preciolibro, anioedicionlibro, numEdicion);
+//
+//                ControllerLibros objC = new ControllerLibros();
+//                boolean in = objC.insertLibro(objL);
+//                if (in) {
+//                    JOptionPane.showMessageDialog(null, "Se inserto Correctamente el Libro " + nombrelibro);
+//                    jButton3.setEnabled(true);
+//                    limpiarCampos();
+//                } else {
+//                    JOptionPane.showMessageDialog(null, "No se pudo Insertar el libro");
+//                }
+//
+//            }
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -285,16 +240,17 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
         } else if (jTextField3.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Debe ingesar un dato valido para el campo!!!");
             rev = false;
-        } else if (jTextField4.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Debe ingesar un dato valido para el campo!!!");
-            rev = false;
-        } else if (jTextField5.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Debe ingesar un dato valido para el campo!!!");
-            rev = false;
-        } else if (jTextField6.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Debe ingesar un dato valido para el campo!!!");
-            rev = false;
         }
+//        else if (jTextField4.getText().equals("")) {
+//            JOptionPane.showMessageDialog(null, "Debe ingesar un dato valido para el campo!!!");
+//            rev = false;
+//        } else if (jTextField5.getText().equals("")) {
+//            JOptionPane.showMessageDialog(null, "Debe ingesar un dato valido para el campo!!!");
+//            rev = false;
+//        } else if (jTextField6.getText().equals("")) {
+//            JOptionPane.showMessageDialog(null, "Debe ingesar un dato valido para el campo!!!");
+//            rev = false;
+//        }
         return rev;
     }
 
@@ -302,35 +258,37 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
         jTextField1.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
-        jTextField4.setText("");
-        jTextField5.setText("");
-        jTextField6.setText("");
+//        jTextField4.setText("");
+//        jTextField5.setText("");
+//        jTextField6.setText("");
     }
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        ControllerAutor objC = new ControllerAutor();
+                boolean in = objC.insertAutor(listaAutores);
+                if (in) {
+                    JOptionPane.showMessageDialog(null, "Se inserto Correctamente el o los autores");
+                    //jButton3.setEnabled(true);
+                    limpiarCampos();
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se pudieron insertar los autores");
+                }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }

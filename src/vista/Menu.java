@@ -107,6 +107,7 @@ public class Menu extends javax.swing.JFrame {
 
         if (jDesktopPane1.getComponentListeners().length == 0) {
             IULibros objL = new IULibros();
+            objL.jDesktopPaneE=jDesktopPane1;
             jDesktopPane1.add(objL);
             objL.show();
         } else {

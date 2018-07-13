@@ -21,7 +21,7 @@ public class ControllerLibros {
         String sql="INSERT INTO libros VALUES ('"+objL.getIdlibro()+"', '"+objL.getNombrelibro()+"', '"+
                 objL.getNumpaginaslibro()+"', '"+objL.getPreciolibro()+"', '"+objL.getAnioedicionlibro()+"', '"+objL.getNumEdicion()+"')";
         Libro objL1 = new Libro();
-        ins = objL1.insertLibro(sql,objL);
+        ins = objL1.insertLibro(sql);
 
         return ins;
     }
