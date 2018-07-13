@@ -128,6 +128,7 @@ public class IULibros extends javax.swing.JInternalFrame {
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Autor(s)");
         jButton3.setBorder(null);
+        jButton3.setEnabled(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -261,9 +262,12 @@ public class IULibros extends javax.swing.JInternalFrame {
                 boolean in = objC.insertLibro(objL);
                 if (in) {
                     JOptionPane.showMessageDialog(null, "Se inserto Correctamente el Libro " + nombrelibro);
+                    jButton3.setEnabled(true);
+                    limpiarCampos();
                 } else {
                     JOptionPane.showMessageDialog(null, "No se pudo Insertar el libro");
                 }
+
             }
         }
 
@@ -294,6 +298,14 @@ public class IULibros extends javax.swing.JInternalFrame {
         return rev;
     }
 
+    public void limpiarCampos() {
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        jTextField6.setText("");
+    }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed

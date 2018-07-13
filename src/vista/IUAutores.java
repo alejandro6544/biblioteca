@@ -5,6 +5,8 @@
  */
 package vista;
 
+import java.awt.Color;
+
 /**
  *
  * @author dacastro
@@ -16,6 +18,7 @@ public class IUAutores extends javax.swing.JInternalFrame {
      */
     public IUAutores() {
         initComponents();
+        this.getContentPane().setBackground(new Color(0, 102, 153));
     }
 
     /**
@@ -43,16 +46,16 @@ public class IUAutores extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(145, 145, 145)
+                .addGap(192, 192, 192)
                 .addComponent(jLabel1)
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(228, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(268, Short.MAX_VALUE))
+                .addContainerGap(387, Short.MAX_VALUE))
         );
 
         pack();
