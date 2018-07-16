@@ -17,14 +17,16 @@ public class Autor {
     private String nombreautor;
     private String apellidoautor;
     private String paisautor;
+    private int idautores;
 
     public Autor() {
     }
 
-    public Autor(String nombreautor, String apellidoautor, String paisautor) {
+    public Autor(String nombreautor, String apellidoautor, String paisautor, int idautores) {
         this.nombreautor = nombreautor;
         this.apellidoautor = apellidoautor;
         this.paisautor = paisautor;
+        this.idautores=idautores;
     }
 
     public String getNombreautor() {
@@ -51,12 +53,21 @@ public class Autor {
         this.paisautor = paisautor;
     }
 
-    @Override
-    public String toString() {
-        return "Autor{" + "nombreautor=" + nombreautor + ", apellidoautor=" + apellidoautor + ", paisautor=" + paisautor + '}';
+    public int getIdautores() {
+        return idautores;
     }
 
-    public boolean insertAutor(String sql) {
+    public void setIdautores(int idautores) {
+        this.idautores = idautores;
+    }
+
+    @Override
+    public String toString() {
+        return "Autor{" + "nombreautor=" + nombreautor + ", apellidoautor=" + apellidoautor + ", paisautor=" + paisautor + ", idautores=" + idautores + '}';
+    }
+
+    //Inserta datos a la tabla que se le asigne en el sql
+    public boolean insert(String sql) {
         ConnectBD objCon = new ConnectBD();
 
         if (objCon.crearConexion()) {

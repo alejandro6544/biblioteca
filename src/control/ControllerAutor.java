@@ -21,10 +21,10 @@ public class ControllerAutor {
         boolean ins = false;
 
         for (int i = 0; i < listaAutores.size(); i++) {
-            String sql = "INSERT INTO autores (nombreautor,apellidoautor,paisautor) VALUES ('" + listaAutores.get(i).getNombreautor() + "', '" + listaAutores.get(i).getApellidoautor() + "', '"
+            String sql = "INSERT INTO autores (idautores,nombreautor,apellidoautor,paisautor) VALUES ("+listaAutores.get(i).getIdautores() +", '"+ listaAutores.get(i).getNombreautor() + "', '" + listaAutores.get(i).getApellidoautor() + "', '"
                     + listaAutores.get(i).getPaisautor() + "')";
             Autor objA = new Autor();
-            ins = objA.insertAutor(sql);
+            ins = objA.insert(sql);
         }
 
         return ins;

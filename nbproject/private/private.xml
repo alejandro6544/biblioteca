@@ -8,7 +8,10 @@
             <file>file:/C:/Users/dacastro/Documents/NetBeansProjects/biblioteca/src/control/ConnectBD.java</file>
             <file>file:/C:/Users/dacastro/Documents/NetBeansProjects/biblioteca/src/vista/IULibros.java</file>
             <file>file:/C:/Users/dacastro/Documents/NetBeansProjects/biblioteca/src/control/ControllerLibros.java</file>
+            <file>file:/C:/Users/dacastro/Documents/NetBeansProjects/biblioteca/src/modelo/LibroPorAutor.java</file>
             <file>file:/C:/Users/dacastro/Documents/NetBeansProjects/biblioteca/src/modelo/Libro.java</file>
+            <file>file:/C:/Users/dacastro/Documents/NetBeansProjects/biblioteca/src/control/ControllerAutor.java</file>
+            <file>file:/C:/Users/dacastro/Documents/NetBeansProjects/biblioteca/src/modelo/Autor.java</file>
         </group>
     </open-files>
 </project-private>

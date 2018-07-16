@@ -6,6 +6,7 @@
 package vista;
 
 import control.ControllerAutor;
+import control.ControllerLibroPorAutor;
 import control.ControllerLibros;
 import java.awt.Color;
 import java.util.LinkedList;
@@ -24,6 +25,7 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
      * Creates new form IULibros
      */
     LinkedList<Autor> listaAutores;
+    public String codL;
 
     public IUAutores1() {
         initComponents();
@@ -50,6 +52,8 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(0, 102, 153));
         setBorder(null);
@@ -121,6 +125,14 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Apellido Autor *");
+
+        jTextField5.setFont(new java.awt.Font("Arial Narrow", 0, 14)); // NOI18N
+        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -136,7 +148,8 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel1))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel5))
                         .addGap(80, 80, 80))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(82, 82, 82)
@@ -153,7 +166,8 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -173,7 +187,11 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(176, 176, 176)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(118, 118, 118)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -192,9 +210,11 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
             String nombreautor = jTextField1.getText();
             String apellidoautor = jTextField2.getText();
             String paisautor = jTextField3.getText();
+            int idautores = Integer.parseInt(jTextField5.getText());
 
-            objA= new Autor(nombreautor, apellidoautor, paisautor);
+            objA = new Autor(nombreautor, apellidoautor, paisautor, idautores);
             listaAutores.add(objA);
+            limpiarCampos();
 //            try {
 //                numpaginaslibro = Integer.parseInt(jTextField3.getText());
 //            } catch (NumberFormatException nfe) {
@@ -240,17 +260,10 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
         } else if (jTextField3.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Debe ingesar un dato valido para el campo!!!");
             rev = false;
+        }else if (jTextField5.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Debe ingesar un dato valido para el campo!!!");
+            rev = false;
         }
-//        else if (jTextField4.getText().equals("")) {
-//            JOptionPane.showMessageDialog(null, "Debe ingesar un dato valido para el campo!!!");
-//            rev = false;
-//        } else if (jTextField5.getText().equals("")) {
-//            JOptionPane.showMessageDialog(null, "Debe ingesar un dato valido para el campo!!!");
-//            rev = false;
-//        } else if (jTextField6.getText().equals("")) {
-//            JOptionPane.showMessageDialog(null, "Debe ingesar un dato valido para el campo!!!");
-//            rev = false;
-//        }
         return rev;
     }
 
@@ -258,9 +271,7 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
         jTextField1.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
-//        jTextField4.setText("");
-//        jTextField5.setText("");
-//        jTextField6.setText("");
+        jTextField5.setText("");
     }
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -268,14 +279,21 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         ControllerAutor objC = new ControllerAutor();
-                boolean in = objC.insertAutor(listaAutores);
-                if (in) {
-                    JOptionPane.showMessageDialog(null, "Se inserto Correctamente el o los autores");
-                    //jButton3.setEnabled(true);
-                    limpiarCampos();
-                } else {
-                    JOptionPane.showMessageDialog(null, "No se pudieron insertar los autores");
-                }
+        ControllerLibroPorAutor objCla = new ControllerLibroPorAutor();
+        boolean in = objC.insertAutor(listaAutores);
+        if (in) {
+            JOptionPane.showMessageDialog(null, "Se inserto Correctamente el o los autores");
+
+            //buscar el libro y el autor o autores del libro
+            int [] idsAuores=getIdsAutores(listaAutores);
+            
+            boolean inAL = objCla.asociarAutorLibro(codL,idsAuores);
+
+            //jButton3.setEnabled(true);
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "No se pudieron insertar los autores");
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
 
@@ -286,9 +304,19 @@ public class IUAutores1 extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
+
+    private int[] getIdsAutores(LinkedList<Autor> listaAutores) {
+        int [] arrIA=new int[listaAutores.size()];
+        for (int i = 0; i < listaAutores.size(); i++) {
+           arrIA[i] = listaAutores.get(i).getIdautores();
+        }
+        return arrIA;
+    }
 }

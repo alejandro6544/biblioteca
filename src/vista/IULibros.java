@@ -22,6 +22,7 @@ public class IULibros extends javax.swing.JInternalFrame {
      * Creates new form IULibros
      */
     public JDesktopPane jDesktopPaneE;
+    String codl;
 
     public IULibros() {
         initComponents();
@@ -241,6 +242,7 @@ public class IULibros extends javax.swing.JInternalFrame {
 
         if (revisarCampos()) {
             String idlibro = jTextField1.getText();
+            codl = idlibro;
             String nombrelibro = jTextField2.getText();
             int numpaginaslibro = 0;
             try {
@@ -311,6 +313,7 @@ public class IULibros extends javax.swing.JInternalFrame {
     }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         IUAutores1 objA = new IUAutores1();
+        objA.codL = codl;
         jDesktopPaneE.add(objA);
         objA.show();
     }//GEN-LAST:event_jButton3ActionPerformed

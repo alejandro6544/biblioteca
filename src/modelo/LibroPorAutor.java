@@ -5,6 +5,10 @@
  */
 package modelo;
 
+import control.ConnectBD;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 /**
  *
  * @author dacastro
@@ -43,4 +47,18 @@ public class LibroPorAutor {
         return "LibroPorAutor{" + "idlibrolp=" + idlibrolp + ", idautorlp=" + idautorlp + '}';
     }
 
+    public boolean insert(String sql) {
+        ConnectBD objCon = new ConnectBD();
+
+        if (objCon.crearConexion()) {
+            try {
+                Statement sentencia = objCon.getConexion().createStatement();
+                sentencia.executeUpdate(sql);
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                return false;
+            }
+        }
+        return true;
+    }
 }
