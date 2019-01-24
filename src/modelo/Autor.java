@@ -18,6 +18,7 @@ public class Autor {
     private String apellidoautor;
     private String paisautor;
     private int idautores;
+    private String nn;
 
     public Autor() {
     }
